@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Creators as CoursesActions } from '../../store/ducks/courses';
 
@@ -6,7 +6,6 @@ export default props => {
   const courses = useSelector(state => state.courses.data);
   const dispatch = useDispatch();
 
-  const refInput = useRef();
   const [courseName, setCourseName] = useState('');
 
   return (
