@@ -1,18 +1,6 @@
 import { createStore } from 'redux';
+import reducers from './ducks';
 
-const INITIAL_STATE_COURSES = {
-  data: ['React Native', 'React JS', 'NodeJS']
-};
-
-function courses(state = INITIAL_STATE_COURSES, action) {
-  switch (action.type) {
-    case 'ADD_COURSE':
-      return { ...state, data: [...state.data, action.title] };
-    default:
-      return state;
-  }
-}
-
-const store = createStore(courses);
+const store = createStore(reducers);
 
 export default store;

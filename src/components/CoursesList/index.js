@@ -1,8 +1,9 @@
 import React, { useState, useRef } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
+import { Creators as CoursesActions } from '../../store/ducks/courses';
 
 export default props => {
-  const courses = useSelector(state => state.data);
+  const courses = useSelector(state => state.courses.data);
   const dispatch = useDispatch();
 
   const refInput = useRef();
@@ -24,7 +25,7 @@ export default props => {
         type="button"
         value="cadastrar"
         onClick={() => {
-          dispatch({ type: 'ADD_COURSE', title: courseName });
+          dispatch(CoursesActions.addCourse(courseName));
           setCourseName();
         }}
       />
